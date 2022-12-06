@@ -16,6 +16,12 @@ const AllocationForm = (props) => {
                 return;
             }
 
+            if(!cost){
+                alert("The value entered is not a number!")
+                setCost("")
+                return;
+            }
+
         const expense = {
             name: name,
             cost: parseInt(cost),
