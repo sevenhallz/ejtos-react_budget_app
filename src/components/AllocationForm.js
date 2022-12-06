@@ -7,6 +7,7 @@ const AllocationForm = (props) => {
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
+    const [budget, setBudget] = useState('');
 
     const submitEvent = () => {
 
@@ -22,6 +23,17 @@ const AllocationForm = (props) => {
                 return;
             }
 
+            if(cost > 20000){
+                alert("The budget can not be more than 20,000");
+                setCost("");
+                return;
+            }
+
+            if(budget > 20000){
+                alert("The budget can not be more than 20,000");
+                setBudget("");
+                return;
+            }
         const expense = {
             name: name,
             cost: parseInt(cost),
